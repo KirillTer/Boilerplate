@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
 
-import weather from './weather';
+import main from './main';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
-    weather
+    main
 })

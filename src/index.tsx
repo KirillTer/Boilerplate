@@ -9,7 +9,7 @@ import { ConnectedRouter } from "connected-react-router";
 import configureStore, { history } from "./store/configureStore";
 
 import Layout from "./containers/Layout";
-import Weather from "./containers/wether/Weather.connect";
+import MainView from "./containers/main-page/Main.connect";
 
 const store = configureStore();
 
@@ -19,9 +19,9 @@ ReactDOM.render(
       <Layout>
         <Switch>
           <Route exact path="/" render={() => (
-              <Redirect to="/weather/male"/>
+              <Redirect to="/main/auth"/>
           )}/>
-          <Route path="/weather" component={Weather} />
+          <Route path="/main" component={MainView} />
         </Switch>
       </Layout>
     </ConnectedRouter>

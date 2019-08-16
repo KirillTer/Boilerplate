@@ -1,14 +1,14 @@
-import {LOAD_WEATHER_START, LOAD_WEATHER_SUCCESS, LOAD_WEATHER_FAILURE} from './actionTypes'
+import {LOAD_MAIN_START, LOAD_MAIN_SUCCESS, LOAD_MAIN_FAILURE} from './actionTypes'
 
-import { fetchWeatherApi } from '../../api/'
+import { fetchMainApi } from '../../api/'
 
-export const loadWeather = () => async dispatch => {
-    dispatch({type: LOAD_WEATHER_START})
+export const loadMain = () => async dispatch => {
+    dispatch({type: LOAD_MAIN_START})
 
     try {
-        const weather = await fetchWeatherApi()
-        dispatch({type: LOAD_WEATHER_SUCCESS, payload: weather})
+        const mainData = await fetchMainApi()
+        dispatch({type: LOAD_MAIN_SUCCESS, payload: mainData})
     } catch (err) {
-        dispatch({type: LOAD_WEATHER_FAILURE, payload: err, error: true})
+        dispatch({type: LOAD_MAIN_FAILURE, payload: err, error: true})
     }
 }

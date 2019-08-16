@@ -1,16 +1,16 @@
 import * as R from 'ramda'
-import {LOAD_WEATHER_SUCCESS} from '../actions/actionTypes'
+import {LOAD_MAIN_SUCCESS} from '../actions/actionTypes'
 
 const initialState = {
-    weather: []
+    main: []
 }
 
 export default (state = initialState, {type, payload}) => {
     switch (type) {
-        case LOAD_WEATHER_SUCCESS:
-            console.log('LOAD_WEATHER_SUCCESS')
+        case LOAD_MAIN_SUCCESS:
+            console.log('LOAD_MAIN_SUCCESS')
             return R.merge(state, {
-                weather: payload
+                main: payload
             })
         default: return state
     }

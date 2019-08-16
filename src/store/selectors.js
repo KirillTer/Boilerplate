@@ -1,9 +1,9 @@
 import * as R from "ramda";
 
-export const getWeatherSelector = state => R.values(state.weather);
+export const getMainSelector = state => R.values(state.main);
 
-export const getMaleWeatherSelector = state =>
-  R.values(state.weather);
+export const getAuthMainSelector = state =>
+  R.values(state.main);
 
-export const getFemaleWeatherSelector = state =>
-  R.values(state.weather);
+export const getAdminMainSelector = state =>
+  R.values(state.main);
