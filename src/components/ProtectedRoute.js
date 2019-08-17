@@ -1,21 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Route} from 'react-router-dom'
 import UnAuthorized from './UnAuthorized'
 
-class ProtectedRoute extends Component {
-    static propTypes = {
+const ProtectedRoute = props => {
 
-    };
+    const {component: ProtectedComponent, ...rest} = props
+    const renderProtected = (routeProps) => (localStorage.getItem('token') ? <ProtectedComponent {...routeProps}/> : <UnAuthorized />)
 
-    render() {
-        const {component, ...rest} = this.props
-        return <Route {...rest} render={this.renderProtected}/>
-    }
-
-    renderProtected = (routeProps) => {
-        const {component: ProtectedComponent} = this.props
-        return localStorage.getItem('token') ? <ProtectedComponent {...routeProps}/> : <UnAuthorized />
-    }
+    return <Route {...rest} render={renderProtected}/>
 }
 
 export default ProtectedRoute
