@@ -1,19 +1,12 @@
-import {LOAD_MAIN_START, LOAD_MAIN_SUCCESS, LOAD_MAIN_FAILURE,
+import {LOAD_MAIN_START,
 SINGIN_START, SINGIN_SUCCESS, SINGIN_FAILURE,
 SINGUP_START, SINGUP_SUCCESS, SINGUP_FAILURE} from './actionTypes'
 
-import { fetchMainApi, singInApi, singUpApi } from '../../api/'
+import { singInApi, singUpApi } from '../../api/'
 
-export const loadMain = () => async dispatch => {
-    dispatch({type: LOAD_MAIN_START})
-
-    try {
-        const mainData = await fetchMainApi()
-        dispatch({type: LOAD_MAIN_SUCCESS, payload: mainData})
-    } catch (err) {
-        dispatch({type: LOAD_MAIN_FAILURE, payload: err, error: true})
-    }
-}
+export const loadMain = () => ({
+    type: LOAD_MAIN_START
+})
 
 export const singInAction = (email, password) => async dispatch => {
     console.log('Start Sign IN Action - ', email, password)
