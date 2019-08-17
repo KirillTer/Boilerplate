@@ -26,7 +26,7 @@ const SingInView = ({
 }) => {
   return (
     <>
-      <h1>Auth Page</h1>
+      <h1>Sing In</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <Field
