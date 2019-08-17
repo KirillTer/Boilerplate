@@ -1,4 +1,5 @@
 import request from 'superagent'
+import firebase from "firebase";
 
 export const fetchMainApi = async () => {
     const {body} = await request.get(
@@ -6,4 +7,20 @@ export const fetchMainApi = async () => {
     )
     console.log('API - ', body.list)
     return body.list
+}
+
+export const singInApi = async (email, password) => {
+  console.log('Start Sign in API - ', email, password)
+  firebase
+  .auth()
+  .signInWithEmailAndPassword(email, password)
+  .then(user => {
+    console.log("Auth Token - ", user.user);
+    localStorage.setItem("token", user.user.uid);
+    return user.user;
+  })
+  .catch(error => {
+    console.error(error);
+    return error
+  });
 }
