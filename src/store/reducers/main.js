@@ -1,9 +1,7 @@
 import * as R from 'ramda'
 import {LOAD_MAIN_SUCCESS} from '../actions/actionTypes'
 
-const initialState = {
-    main: []
-}
+const initialState = {}
 
 export default (state = initialState, {type, payload}) => {
     switch (type) {
