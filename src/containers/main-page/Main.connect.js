@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import { loadMain } from '../../store/actions'
+import { LOAD_MAIN_START } from '../../store/actionTypes'
 import MainView from "./Main.view";
 
 
@@ -9,7 +9,9 @@ const mapStateToProps = () => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadMain: () => dispatch(loadMain()),
+    loadMain: () => dispatch({
+      type: LOAD_MAIN_START
+  }),
   };
 };
 

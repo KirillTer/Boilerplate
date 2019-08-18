@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import { singInAction, singUpAction } from '../../store/actions'
+import { SINGIN_START, SINGUP_START } from '../../store/actionTypes'
 import { getAuthMainSelector } from "../../store/selectors";
 import AuthView from "./Auth.view";
 
@@ -12,8 +12,14 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    singInAction: (email, password) => dispatch(singInAction(email, password)),
-    singUpAction: (email, password) => dispatch(singUpAction(email, password)),
+    singInAction: (email, password) => dispatch({
+      type: SINGIN_START,
+      payload: {email, password}
+    }),
+    singUpAction: (email, password) => dispatch({
+      type: SINGUP_START,
+      payload: {email, password}
+    })
   };
 };
 

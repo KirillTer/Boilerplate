@@ -1,14 +1,14 @@
 import * as R from 'ramda'
-import {LOAD_MAIN_SUCCESS} from '../actionTypes'
+import {SINGUP_SUCCESS} from '../actionTypes'
 
 const initialState = {}
 
 export default (state = initialState, {type, payload}) => {
     switch (type) {
-        case LOAD_MAIN_SUCCESS:
-            console.log('LOAD_MAIN_SUCCESS')
+        case SINGUP_SUCCESS:
+            console.log('SINGUP_SUCCESS', payload)
             return R.merge(state, {
-                main: payload
+                user: payload
             })
         default: return state
     }
