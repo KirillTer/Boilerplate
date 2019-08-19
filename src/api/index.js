@@ -9,9 +9,9 @@ export const fetchMainApi = async () => {
     return body.list
 }
 
-export const singInApi = async ({email, password}) => {
+export const singInApi = ({email, password}) => {
   console.log('Start Sign IN API - ', email, password)
-  const userResult = await firebase
+  const userResult = firebase
   .auth()
   .signInWithEmailAndPassword(email, password)
   .then(user => {
@@ -26,9 +26,9 @@ export const singInApi = async ({email, password}) => {
   return userResult;
 }
 
-export const singUpApi = async ({email, password}) => {
+export const singUpApi = ({email, password}) => {
   console.log('Start Sign UP API - ', email, password)
-  const userResult = await firebase
+  const userResult = firebase
   .auth()
   .createUserWithEmailAndPassword(email, password)
   .then(user => {
@@ -38,6 +38,7 @@ export const singUpApi = async ({email, password}) => {
   })
   .catch(error => {
     console.error(error);
+    return error
   });
   return userResult;
 }

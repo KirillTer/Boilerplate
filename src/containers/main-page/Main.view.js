@@ -5,7 +5,7 @@ import ProtectedRouter from "../../components/ProtectedRoute";
 import Admin from '../admin/Admin.connect'
 import Auth from '../auth/Auth.connect'
 
-const MainView = ({loadMain, match}) => {
+const MainView = ({mainData, loadMain, match}) => {
 
   useEffect(() => {
     loadMain();
@@ -13,6 +13,7 @@ const MainView = ({loadMain, match}) => {
 
   return (
     <>
+    {console.log('Main selector - ', mainData)}
     <Switch>
       <ProtectedRouter path={match.path + "/admin"} component={Admin} />
       <Route path={match.path + "/auth"} component={Auth} />

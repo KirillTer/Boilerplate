@@ -1,10 +1,13 @@
 import {connect} from "react-redux";
 import { LOAD_MAIN_START } from '../../store/actionTypes'
+import { getMainSelector } from '../../store/selectors'
 import MainView from "./Main.view";
 
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = (state) => {
+  return {
+    mainData: getMainSelector(state)
+  };
 };
 
 const mapDispatchToProps = dispatch => {

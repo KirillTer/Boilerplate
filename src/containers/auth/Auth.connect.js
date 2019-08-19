@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
 import { SINGIN_START, SINGUP_START } from '../../store/actionTypes'
-import { getAuthMainSelector } from "../../store/selectors";
+import { getAuthSelector } from "../../store/selectors";
 import AuthView from "./Auth.view";
 
 
 const mapStateToProps = (state) => {
   return {
-    auth: getAuthMainSelector(state)
+    auth: getAuthSelector(state)
   };
 };
 

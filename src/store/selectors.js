@@ -1,9 +1,8 @@
-import * as R from "ramda";
+import { createSelector } from 'reselect'
 
-export const getMainSelector = state => R.values(state.mainReducer);
+const stateMainSelector = state => state.mainReducer;
+export const getMainSelector = createSelector(stateMainSelector, state => state.main);
 
-export const getAuthMainSelector = state =>
-  R.values(state.mainReducer);
+const stateAuthSelector = state => state.signinReducer;
+export const getAuthSelector = createSelector(stateAuthSelector, state => state.user);
 
-export const getAdminMainSelector = state =>
-  R.values(state.mainReducer);

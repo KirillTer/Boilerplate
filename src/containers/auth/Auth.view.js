@@ -19,6 +19,7 @@ const AuthView = ({auth, match, singInAction, singUpAction}) => {
   return (
     <>
       <h2>Auth page</h2>
+      {console.log('Auth Selector - ', auth)}
       <NavLink to={match.path + "/singin"}>Sing In</NavLink>
       <NavLink to={match.path + "/singup"}>Sing Up</NavLink>
       <Switch>

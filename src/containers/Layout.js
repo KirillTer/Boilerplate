@@ -5,7 +5,6 @@ import Navigation from "../components/Navigation";
 import MainView from "./main-page/Main.connect";
 
 const Layout = () => {
-
   return (
     <>
       <Navigation />
