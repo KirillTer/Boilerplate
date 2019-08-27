@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 
-import AdminView from "./Admin.view";
+import ExercisesView from "./Exercises.view";
 
 
 const mapStateToProps = (state) => {
@@ -11,4 +11,4 @@ const mapDispatchToProps = () => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminView);
+export default connect(mapStateToProps, mapDispatchToProps)(ExercisesView);
