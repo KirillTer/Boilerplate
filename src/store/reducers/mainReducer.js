@@ -6,7 +6,7 @@ export default (state = initialState, {type, payload}) => {
     switch (type) {
         case LOAD_MAIN_SUCCESS:
             console.log('LOAD_MAIN_SUCCESS')
-            state['main'] = payload;
+            state.main = payload;
             return;
         default: return state
     }
