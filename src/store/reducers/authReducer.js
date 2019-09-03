@@ -2,7 +2,9 @@ import {SINGIN_SUCCESS, SINGIN_FAILURE,
         LOGOUT_SUCCESS, LOGOUT_FAILURE,
         SINGUP_SUCCESS, SINGUP_FAILURE} from '../actionTypes'
 
-const initialState = {}
+const initialState = {
+    logined: Boolean(localStorage.getItem('token'))
+}
 
 export default (state = initialState, {type, payload}) => {
     switch (type) {

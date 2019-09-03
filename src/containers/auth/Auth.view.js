@@ -4,7 +4,7 @@ import { Route, Switch, NavLink } from "react-router-dom";
 import SingIn from './SingIn.form'
 import SingUp from './SingUp.form'
 
-const AuthView = ({auth, match, singInAction, singUpAction, history}) => {
+const AuthView = ({user, match, singInAction, singUpAction, history}) => {
 
   const handleSingIn = ({ email, password }) => {
     console.log('Handle Sing IN     Email - ', email, '   Password - ', password);
@@ -20,7 +20,7 @@ const AuthView = ({auth, match, singInAction, singUpAction, history}) => {
   return (
     <>
       <h2>Auth page</h2>
-      {console.log('Auth Selector - ', auth)}
+      {console.log('User Selector - ', user)}
       <NavLink to={match.path + "/singin"}>Sing In</NavLink>
       <br />
       <NavLink to={match.path + "/singup"}>Sing Up</NavLink>
