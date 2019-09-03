@@ -21,6 +21,7 @@ const AuthView = ({auth, match, singInAction, singUpAction}) => {
       <h2>Auth page</h2>
       {console.log('Auth Selector - ', auth)}
       <NavLink to={match.path + "/singin"}>Sing In</NavLink>
+      <br />
       <NavLink to={match.path + "/singup"}>Sing Up</NavLink>
       <Switch>
         <Route path={match.path + "/singin"} render={() => (<SingIn onSubmit={handleSingIn}/>)}/>
