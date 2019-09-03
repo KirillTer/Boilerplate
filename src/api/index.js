@@ -16,7 +16,6 @@ export const singInApi = ({email, password}) => {
   .signInWithEmailAndPassword(email, password)
   .then(user => {
     console.log('Auth SingIn user email - ', user.user.email);
-    localStorage.setItem("token", user.user.uid);
     return user.user;
   })
   .catch(error => {
@@ -33,7 +32,6 @@ export const singUpApi = ({email, password}) => {
   .createUserWithEmailAndPassword(email, password)
   .then(user => {
     console.log('Auth SingUP user email - ', user.user.email)
-    localStorage.setItem('token', user.user.uid)
     return user.user;
   })
   .catch(error => {

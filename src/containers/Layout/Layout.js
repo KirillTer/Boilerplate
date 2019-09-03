@@ -4,10 +4,10 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import MainView from "./main-page/Main.connect";
-import AuthView from "./auth/Auth.connect";
+import Header from "./Header/Header.connect";
+import Footer from "./Footer";
+import MainView from "../main-page/Main.connect";
+import AuthView from "../auth/Auth.connect";
 
 const drawerWidth = 240;
 

@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 
-import ExercisesView from "./Exercises.view";
+import ExercisesView from "./Home.view";
 
 
 const mapStateToProps = (state) => {

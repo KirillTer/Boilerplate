@@ -4,11 +4,12 @@ import { Route, Switch, NavLink } from "react-router-dom";
 import SingIn from './SingIn.form'
 import SingUp from './SingUp.form'
 
-const AuthView = ({auth, match, singInAction, singUpAction}) => {
+const AuthView = ({auth, match, singInAction, singUpAction, history}) => {
 
   const handleSingIn = ({ email, password }) => {
     console.log('Handle Sing IN     Email - ', email, '   Password - ', password);
     singInAction(email, password);
+    if(localStorage.getItem("token")) history.push('/main/home')
   }
 
   const handleSingUp = ({ email, password }) => {

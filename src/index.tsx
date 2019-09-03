@@ -7,7 +7,7 @@ import { ConnectedRouter } from "connected-react-router";
 import configureStore, { history } from "./store/configureStore";
 import "./configFireBase";
 
-import Layout from "./containers/Layout";
+import Layout from "./containers/Layout/Layout";
 
 const store = configureStore();
 

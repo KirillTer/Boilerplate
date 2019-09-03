@@ -68,12 +68,16 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const Header = ({onOpen, onClose, open}) => {
+const HeaderView = ({onOpen, onClose, open, loginStatus, singOutAction}) => {
   const classes = useStyles();
   const theme = useTheme();
   
-  function handleProfileMenuOpen(event) {
+  const handleProfileMenuOpen = event => {
     alert('Profile opened!');
+  }
+
+  const onLogout = () => {
+    singOutAction();
   }
 
   return(
@@ -98,7 +102,7 @@ const Header = ({onOpen, onClose, open}) => {
           <Typography variant="h6" noWrap className={classes.title}>
             Config Tools
           </Typography>
-          { localStorage.getItem("token") ?
+          { loginStatus ?
             (<><IconButton
               edge="end"
               aria-label="account of current user"
@@ -109,7 +113,7 @@ const Header = ({onOpen, onClose, open}) => {
             >
               <AccountCircle />
             </IconButton>
-            <Button color="inherit">Logout</Button></>)
+            <Button color="inherit" onClick={() => onLogout()}>Logout</Button></>)
             :
             <Button color="inherit" component={Link} to="/auth">LogIn</Button>
           }
@@ -152,4 +156,4 @@ const Header = ({onOpen, onClose, open}) => {
   )
 }
 
-export default Header
+export default HeaderView
