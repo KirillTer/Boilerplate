@@ -14,7 +14,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     padding: 20,
-    margin: 10
+    margin: 10,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {

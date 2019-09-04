@@ -6,6 +6,8 @@ import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import configureStore, { history } from "./store/configureStore";
 import "./configFireBase";
+import { ThemeProvider } from '@material-ui/styles';
+import theme from './mainTheme'
 
 import Layout from "./containers/Layout/Layout";
 
@@ -14,7 +16,9 @@ const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Layout />
+      <ThemeProvider theme={theme}>
+        <Layout />
+      </ThemeProvider>
     </ConnectedRouter>
   </Provider>,
   document.getElementById("root")

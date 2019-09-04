@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -20,6 +20,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import Link from '@material-ui/core/Link';
 
 const drawerWidth = 240;
 const menuId = 'primary-search-account-menu';
@@ -47,6 +48,9 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+  },
+  white: {
+    color: 'white',
   },
   hide: {
     display: 'none',
@@ -100,7 +104,9 @@ const HeaderView = ({onOpen, onClose, open, loginStatus, singOutAction}) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap className={classes.title}>
-            Config Tools
+            <Link component={RouterLink} to="/main" className={classes.white}>
+              Config Tools
+            </Link>
           </Typography>
           { loginStatus ?
             (<><IconButton
@@ -115,7 +121,7 @@ const HeaderView = ({onOpen, onClose, open, loginStatus, singOutAction}) => {
             </IconButton>
             <Button color="inherit" onClick={() => onLogout()}>Logout</Button></>)
             :
-            <Button color="inherit" component={Link} to="/auth">LogIn</Button>
+            <Button color="inherit" component={RouterLink} to="/auth">LogIn</Button>
           }
         </Toolbar>
       </AppBar>
