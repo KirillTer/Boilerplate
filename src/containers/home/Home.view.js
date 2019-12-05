@@ -1,11 +1,13 @@
 import React from "react";
 
-const ExercisesView = () => {
+const HomeView = ({mainData}) => {
   return (
     <>
-      <h1>Home Page</h1>
+      {mainData && mainData.map(item => {
+        return <h3 key={item.id}>{item.name}</h3>
+      })}
     </>
   );
 };
 
-export default ExercisesView;
+export default HomeView;

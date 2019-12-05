@@ -1,20 +1,17 @@
 import {connect} from "react-redux";
-import { LOGOUT_START } from '../../../store/actionTypes'
-import { getLoginSelector } from "../../../store/selectors";
+import { LOAD_MAIN_START } from '../../../store/actionTypes'
 import HeaderView from './Header.view';
 
 
 const mapStateToProps = (state) => {
-  return {
-    loginStatus: getLoginSelector(state)
-  };
+  return {};
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    singOutAction: () => dispatch({
-      type: LOGOUT_START
-    })
+    loadMain: () => dispatch({
+      type: LOAD_MAIN_START
+    }),
   };
 };
 

@@ -1,14 +1,16 @@
 import {connect} from "react-redux";
+import { getMainSelector } from '../../store/selectors'
 
-import ExercisesView from "./Home.view";
-
+import HomeView from "./Home.view";
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    mainData: getMainSelector(state)
+  };
 };
 
 const mapDispatchToProps = () => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExercisesView);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeView);

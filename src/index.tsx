@@ -5,7 +5,6 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import configureStore, { history } from "./store/configureStore";
-import "./configFireBase";
 import { ThemeProvider } from '@material-ui/styles';
 import theme from './mainTheme'
 
