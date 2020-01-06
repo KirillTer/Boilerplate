@@ -8,7 +8,7 @@ import configureStore, { history } from "./store/configureStore";
 import { ThemeProvider } from '@material-ui/styles';
 import theme from './mainTheme'
 
-import Layout from "./containers/Layout/Layout";
+import Layout from "./containers/layout/Layout";
 
 const store = configureStore();
 

@@ -1,9 +1,27 @@
 import request from 'superagent'
 
+const baseURL = 'https://alphafx-code-test-api.herokuapp.com'
+
 export const fetchMainApi = async () => {
-    const {body} = await request.get(
-      'https://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&APPID=139a21f597a82e543b40b68435fd2220'
-    )
-    console.log('API - ', body.list)
-    return body.list
+  const {body} = await request.post(
+    `${baseURL}/api/teams`
+  )
+  console.log('main API - ', body.data)
+  return body.data
+}
+
+export const fetchPlayersApi = async (id) => {
+  const {body} = await request.post(
+    `${baseURL}/api/teams/players`
+  ).send({ team_id: id})
+  console.log('players API - ', body.data)
+  return body.data
+}
+
+export const fetchGamesApi = async (id) => {
+  const {body} = await request.post(
+    `${baseURL}/api/teams/games`
+  ).send({ team_one_id: id})
+  console.log('games API - ', body.data)
+  return body.data
 }

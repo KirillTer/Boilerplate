@@ -1,15 +1,27 @@
-import React from "react";
-import { Switch } from "react-router-dom";
+import React, { useEffect } from "react";
+import { makeStyles } from '@material-ui/core/styles';
 
-import ProtectedRouter from "../../components/ProtectedRoute";
-import Home from '../home/Home.connect'
+import CardItem from '../../components/CardItem'
 
-const MainView = ({ match}) => {
+const useStyles = makeStyles({
+  mainStyle: {
+    display: 'flex',
+  },
+});
+
+const MainView = ({ loadMain, mainData }) => {
+  const classes = useStyles();
+
+  useEffect(() => {
+    loadMain()
+  }, [loadMain])
 
   return (
-    <Switch>
-      <ProtectedRouter path={match.path + "/home"} component={Home} />
-    </Switch>
+    <div className={classes.mainStyle}>
+      {mainData && mainData.map(item => {
+        return <CardItem key={item.id} item={item} />
+      })}
+    </div>
   );
 };
 
